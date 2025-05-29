@@ -17,15 +17,6 @@ A powerful and flexible Discord bot for managing **anonymous elections and votes
 
 ---
 
-## ⚙️ Configuration
-
-The bot uses environment variables (configured in a `.env` file **not included in this repository**) to store sensitive tokens. Here's a list of required environment variables:
-
-```env
-DISCORD_TOKEN=your_bot_token
-CLIENT_ID=your_client_id
-GUILD_ID=optional_specific_guild_id_for_testing```
-
 ## 🌍 Language Support
 
 The bot supports the following languages:
@@ -34,6 +25,8 @@ The bot supports the following languages:
 - FR French
 
 Language can be changed via a configuration command or environment setting depending on your implementation.
+
+---
 
 ## 💬 Commands Overview
 
@@ -65,6 +58,9 @@ bash
 Copiar
 Editar
 /vote candidate:"Alice"
+
+---
+
 ## 🛡️ Must be used in a private message with the bot.
 
 /end-election
@@ -88,7 +84,10 @@ They use /vote in DM to submit their vote.
 
 Once voting ends, the admin runs /end-election to show results.
 
+---
+
 ## 🚀 Hosting
+
 You can host this bot using:
 
 Node.js (locally)
@@ -111,7 +110,10 @@ Editar
 node index.js
 Make sure your .env file is properly configured and placed in the root directory.
 
+---
+
 ## 📂 Structure
+
 bash
 Copiar
 Editar
@@ -125,12 +127,18 @@ Editar
 🤝 Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests for improvements, new features, or bug fixes.
 
+---
+
 ## 🛡️ Security
 This repository does not include any secret tokens. All secrets should be managed via .env files and must not be committed to version control.
 GitHub Push Protection will block any secrets accidentally included.
 
+---
+
 ## 📄 License
 MIT License
+
+---
 
 ## 📬 Invite the Bot
 Click the link below to invite the bot to your server:
