@@ -30,95 +30,173 @@ Language can be changed via a configuration command or environment setting depen
 
 ## 💬 Commands Overview
 
-Commands & Usage
-/create
+### `/create`
 Create a new election. Users can apply as candidates by reacting to the message.
-Example:
-Apply to deploy-comma...
-The election name must be unique.
-The bot will post a message where users can react to apply.
-The message updates dynamically as users apply.
-/open
+
+**Example:**
+```bash
+/create name: Lineup for tomorrow NBA finals
+```
+- The election name must be unique.
+- The bot will post a message where users can react to apply.
+- The message updates dynamically as users apply.
+
+---
+
+### `/open`
 Open an election for voting, specifying the maximum votes per user.
-Example:
-Apply to deploy-comma...
-Only admins or users with the configured role can open elections.
-The bot will post the list of candidates and instructions for voting.
-/vote
+
+**Example:**
+```bash
+/open name: Lineup for tomorrow NBA finals max_votes: 5
+```
+- Only admins or users with the configured role can open elections.
+- The bot will post the list of candidates and instructions for voting. Each candidate will have a number next to their name.
+- In this case, since basketball lineups are made of 5 players, we will want each person to vote for 5 people
+
+---
+
+## `/vote`
 Vote for your preferred candidates. Use numbers separated by commas or spaces.
-Example:
-Apply to deploy-comma...
-You can only vote for open elections.
-The number of votes must not exceed the maximum allowed.
-Votes are anonymous.
-/close
+
+**Example:**
+```bash
+/vote name: Lineup for tomorrow NBA finals votes: 1,3
+```
+- You can only vote for open elections.
+- The number of votes must not exceed the maximum allowed.
+- Votes are anonymous (except for admins, explained later).
+- In the example, the user casts their vote to the first and third applicants.
+
+---
+
+## `/close`
 Close an election and display the winners (including ties) and results.
-Example:
-Apply to deploy-comma...
-Only admins or users with the configured role can close elections.
-The bot will announce the winners and show the results.
-/view
+
+**Example:**
+```bash
+/close name: Lineup for tomorrow NBA finals winners: 5
+```
+- Only admins or users with the configured role can close elections.
+- The bot will announce the winners and show the results.
+- In this example, we will want the 5 players with the most votes, so that they make the match lineup.
+
+---
+
+## `/view`
 Privately view the votes of each user (admin only).
-Example:
-Apply to deploy-comma...
-Results are sent as a private message to the admin.
-/delete
+
+**Example:**
+```bash
+/view name: Lineup for tomorrow NBA finals
+```
+- Results are sent as a private message to the admin, no one else will be able to read it even if in the same channel.
+- Can only be used after opening and before closing the election
+
+---
+
+## `/delete`
 Delete an election (admin or authorized role only).
-Example:
-Apply to deploy-comma...
-/state
-Show the current bot state: language, admin role, created/open elections (admin only).
-Example:
-Apply to deploy-comma...
-/config
+
+**Example:**
+```bash
+/delete name: Lineup for tomorrow NBA finals
+```
+
+---
+
+## `/config`
 Configure the admin role for managing elections (admin only).
-Example:
-Apply to deploy-comma...
-Role name is case-insensitive and ignores spaces.
-/language
+
+**Example:**
+```bash
+/config role: "Election Manager"
+```
+- Role name is case-insensitive and ignores spaces.
+
+---
+
+## `/language`
 Change the bot language (admin only).
-Example:
-Apply to deploy-comma...
-/help
+
+**Example:**
+```bash
+/language lang: "en"
+```
+- Options are: "Español" for Spanish, "English" for English, "Français" for French
+
+---
+
+## `/state`
+Show the current bot state, including: language, admin role, created/open elections (admin only).
+
+**Example:**
+```bash
+/state
+```
+
+---
+
+## `/help`
 Show help adapted to the user's permissions.
-Admins see all commands.
-Authorized role sees all except admin-only commands.
-Regular users see only /help, /contact, and /vote (with example).
-/contact
+
+- Admins see all commands.
+- Authorized role sees all except admin-only commands.
+- Regular users see only `/help`, `/contact`, and `/vote` (with example).
+
+---
+
+## `/contact`
 Show a private message with the bot creator's contact.
-Example:
-Apply to deploy-comma...
-Autocomplete
-All commands with an election name parameter support dynamic autocompletion.
-Only relevant elections are shown (e.g., only open elections for /vote).
-Configuration
-Admin Role: Set with /config. Only admins can change it.
-Language: Set with /language. Only admins can change it.
-Permissions: Only users with the configured role or admin can manage elections.
-Deployment
-Clone the repository.
-Install dependencies:
-Apply to deploy-comma...
-Deploy commands to your server:
-Apply to deploy-comma...
-Start the bot:
-Apply to deploy-comma...
-Example Workflow
-Create an election:
-/create name: "Best Moderator"
-Users apply as candidates by reacting.
-Open the election for voting:
-/open name: "Best Moderator" max_votes: 2
-Users vote:
-/vote name: "Best Moderator" votes: 1,2
-Close the election:
-/close name: "Best Moderator"
-View results or delete as needed.
-Support
-For questions or issues, use /contact in your server to get in touch with the creator.
-License
-MIT
-If you have any questions or suggestions, feel free to open an issue or contact the maintainer!
+
+**Example:**
+```bash
+/contact
+```
+
+---
+
+# Autocomplete
+
+- All commands with an election name parameter support dynamic autocompletion.
+- Only relevant elections are shown (e.g., only open elections for `/vote`).
+
+---
+
+# Configuration
+
+- **Admin Role:** Set with `/config`. Only admins can change it.
+- **Language:** Set with `/language`. Only admins can change it.
+- **Permissions:** Only users with the configured role or admin can manage elections.
+
+---
+
+
+# Example Workflow
+
+1. **Create an election:**
+   ```bash
+   /create name: "Best Moderator"
+   ```
+2. **Users apply as candidates by reacting.**
+3. **Open the election for voting:**
+   ```bash
+   /open name: "Best Moderator" max_votes: 2
+   ```
+4. **Users vote:**
+   ```bash
+   /vote name: "Best Moderator" votes: 1,2
+   ```
+5. **Close the election:**
+   ```bash
+   /close name: "Best Moderator"
+   ```
+
+---
+
+# Support
+
+For questions or issues, use `/contact` in your server to get in touch with the creator.
 
 
 ---
@@ -126,7 +204,7 @@ If you have any questions or suggestions, feel free to open an issue or contact 
 ## 📬 Invite the Bot
 Click the link below to invite the bot to your server:
 
-🔗 Invite Link
+🔗 [Invite Link](https://discord.com/oauth2/authorize?client_id=1377301997417398383&permissions=277025508352&scope=bot%20applications.commands)
 
 
 
