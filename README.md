@@ -30,113 +30,96 @@ Language can be changed via a configuration command or environment setting depen
 
 ## 💬 Commands Overview
 
-Here are the main bot commands with usage examples:
-
-/start-election
-Starts a new election.
-
-Options:
-
-title – Title of the election.
-
-candidates – List of candidates (comma separated).
-
-voters – List of users allowed to vote.
-
+Commands & Usage
+/create
+Create a new election. Users can apply as candidates by reacting to the message.
 Example:
-
-bash
-Copiar
-Editar
-/start-election title:"President Election" candidates:"Alice, Bob, Charlie" voters:@User1 @User2 @User3
+Apply to deploy-comma...
+The election name must be unique.
+The bot will post a message where users can react to apply.
+The message updates dynamically as users apply.
+/open
+Open an election for voting, specifying the maximum votes per user.
+Example:
+Apply to deploy-comma...
+Only admins or users with the configured role can open elections.
+The bot will post the list of candidates and instructions for voting.
 /vote
-Sends a private vote via DM.
-
+Vote for your preferred candidates. Use numbers separated by commas or spaces.
 Example:
-
-bash
-Copiar
-Editar
-/vote candidate:"Alice"
-
----
-
-## 🛡️ Must be used in a private message with the bot.
-
-/end-election
-Ends the current election and publishes results.
-
+Apply to deploy-comma...
+You can only vote for open elections.
+The number of votes must not exceed the maximum allowed.
+Votes are anonymous.
+/close
+Close an election and display the winners (including ties) and results.
 Example:
-
-bash
-Copiar
-Editar
-/end-election
-/status
-Check election status.
-
-## 🧪 Example Flow
-An admin runs /start-election.
-
-Eligible voters receive a DM from the bot.
-
-They use /vote in DM to submit their vote.
-
-Once voting ends, the admin runs /end-election to show results.
-
----
-
-## 🚀 Hosting
-
-You can host this bot using:
-
-Node.js (locally)
-
-Docker
-
-Cloud hosting (Render, Railway, etc.)
-
+Apply to deploy-comma...
+Only admins or users with the configured role can close elections.
+The bot will announce the winners and show the results.
+/view
+Privately view the votes of each user (admin only).
+Example:
+Apply to deploy-comma...
+Results are sent as a private message to the admin.
+/delete
+Delete an election (admin or authorized role only).
+Example:
+Apply to deploy-comma...
+/state
+Show the current bot state: language, admin role, created/open elections (admin only).
+Example:
+Apply to deploy-comma...
+/config
+Configure the admin role for managing elections (admin only).
+Example:
+Apply to deploy-comma...
+Role name is case-insensitive and ignores spaces.
+/language
+Change the bot language (admin only).
+Example:
+Apply to deploy-comma...
+/help
+Show help adapted to the user's permissions.
+Admins see all commands.
+Authorized role sees all except admin-only commands.
+Regular users see only /help, /contact, and /vote (with example).
+/contact
+Show a private message with the bot creator's contact.
+Example:
+Apply to deploy-comma...
+Autocomplete
+All commands with an election name parameter support dynamic autocompletion.
+Only relevant elections are shown (e.g., only open elections for /vote).
+Configuration
+Admin Role: Set with /config. Only admins can change it.
+Language: Set with /language. Only admins can change it.
+Permissions: Only users with the configured role or admin can manage elections.
+Deployment
+Clone the repository.
 Install dependencies:
+Apply to deploy-comma...
+Deploy commands to your server:
+Apply to deploy-comma...
+Start the bot:
+Apply to deploy-comma...
+Example Workflow
+Create an election:
+/create name: "Best Moderator"
+Users apply as candidates by reacting.
+Open the election for voting:
+/open name: "Best Moderator" max_votes: 2
+Users vote:
+/vote name: "Best Moderator" votes: 1,2
+Close the election:
+/close name: "Best Moderator"
+View results or delete as needed.
+Support
+For questions or issues, use /contact in your server to get in touch with the creator.
+License
+MIT
+If you have any questions or suggestions, feel free to open an issue or contact the maintainer!
 
-bash
-Copiar
-Editar
-npm install
-Run the bot:
-
-bash
-Copiar
-Editar
-node index.js
-Make sure your .env file is properly configured and placed in the root directory.
-
----
-
-## 📂 Structure
-
-bash
-Copiar
-Editar
-📁 src/
-├── commands/         # Slash commands definitions
-├── events/           # Bot event handlers
-├── logic/            # Election logic
-├── lang/             # Translations (EN / ES)
-├── utils/            # Utility functions
-📄 index.js           # Bot entry point
-🤝 Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests for improvements, new features, or bug fixes.
-
----
-
-## 🛡️ Security
-This repository does not include any secret tokens. All secrets should be managed via .env files and must not be committed to version control.
-GitHub Push Protection will block any secrets accidentally included.
-
----
-
-## 📄 License
-MIT License
 
 ---
 
