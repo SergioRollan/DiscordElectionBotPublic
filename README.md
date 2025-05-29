@@ -1,8 +1,6 @@
 # Discord Election Bot
 
-A powerful and flexible Discord bot for managing **anonymous elections and votes** inside your server. Ideal for roleplay, private organizations, communities, or any context where secret ballot elections are needed.
-
-[Invite the bot to your server](https://discord.com/oauth2/authorize?client_id=1377301997417398383&permissions=277025508352&scope=bot%20applications.commands)
+A powerful and flexible Discord bot for managing **anonymous elections and votes** inside your server. Ideal for roleplay, private organizations, competitive friendly teams, communities, or any context where secret ballot elections are needed.
 
 ---
 
@@ -20,17 +18,17 @@ A powerful and flexible Discord bot for managing **anonymous elections and votes
 ## 🌍 Language Support
 
 The bot supports the following languages:
-- 🇪🇸 Spanish (default)
-- 🇺🇸 English
-- FR French
+- Spanish
+- English (default)
+- French
 
 Language can be changed via a configuration command or environment setting depending on your implementation.
 
 ---
 
-## 💬 Commands Overview
+# 💬 Commands Overview
 
-### `/create`
+## `/create`
 Create a new election. Users can apply as candidates by reacting to the message.
 
 **Example:**
@@ -43,7 +41,7 @@ Create a new election. Users can apply as candidates by reacting to the message.
 
 ---
 
-### `/open`
+## `/open`
 Open an election for voting, specifying the maximum votes per user.
 
 **Example:**
