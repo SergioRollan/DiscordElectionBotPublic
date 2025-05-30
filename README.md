@@ -103,6 +103,16 @@ Delete an election (admin or authorized role only).
 
 ---
 
+## `/reset`
+Delete all elections (admin only).
+
+**Example:**
+```bash
+/reset
+```
+
+---
+
 ## `/config`
 Configure the admin role for managing elections (admin only).
 
