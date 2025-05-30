@@ -108,7 +108,7 @@ Configure the admin role for managing elections (admin only).
 
 **Example:**
 ```bash
-/config role: "Election Manager"
+/config role: Election Manager
 ```
 - Role name is case-insensitive and ignores spaces.
 
@@ -119,7 +119,7 @@ Change the bot language (admin only).
 
 **Example:**
 ```bash
-/language lang: "en"
+/language lang: Français
 ```
 - Options are: "Español" for Spanish, "English" for English, "Français" for French
 
@@ -141,6 +141,11 @@ Show help adapted to the user's permissions.
 - Admins see all commands.
 - Authorized role sees all except admin-only commands.
 - Regular users see only `/help`, `/contact`, and `/vote` (with example).
+
+**Example:**
+```bash
+/help
+```
 
 ---
 
